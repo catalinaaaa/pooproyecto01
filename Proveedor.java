@@ -4,8 +4,13 @@ package modelo;
  * @author catas
  */
 
-public class Proveedor extends Usuario {
+public class Proveedor{
+  private int cedula = 0;
   private String identificador = "";
+  private String nombre = "";
+  private String contrasenia = "";
+  private String correoElectronico = "";
+  private String nombreUsuario = "";
   private String provincia = "";
   private String canton = "";
   private String distrito = "";
@@ -16,13 +21,18 @@ public class Proveedor extends Usuario {
   private String ubicacion = "";
   private String redesSociales = "";
   private int calificacion = 0;  
+  private String tipoProveedor = "";
 
-  public Proveedor(String pIdentificador, String pProvincia, String pCanton, String pDistrito,
-     String pSenias, int pTelefono, String pSitioWeb, String pHorarioAtencion, String pUbicacion, 
-     String pRedesSociales, int pCalificacion, String pNombre, String pContrasenia, 
-     String pCorreoElectronico, String pNombreUsuario) {
-    super(pNombre, pContrasenia, pCorreoElectronico, pNombreUsuario);
+  public Proveedor(int pCedula, String pIdentificador, String pNombre ,String pContrasenia, 
+     String pCorreoElectronico, String pNombreUsuario, String pProvincia, String pCanton, 
+     String pDistrito, String pSenias, int pTelefono, String pSitioWeb, String pHorarioAtencion, 
+     String pUbicacion, String pRedesSociales, String pTipoProveedor) {
+    setCedula(pCedula);
     setIdentificador(pIdentificador);
+    setNombre(pNombre);
+    setContrasenia(pContrasenia);
+    setCorreoElectronico(pCorreoElectronico);
+    setNombreUsuario(pNombreUsuario);
     setProvincia(pProvincia);
     setCanton(pCanton);
     setDistrito(pDistrito);
@@ -32,7 +42,82 @@ public class Proveedor extends Usuario {
     setHorarioAtencion(pHorarioAtencion);
     setUbicacion(pUbicacion);
     setRedesSociales(pRedesSociales);
-    setCalificacion(pCalificacion);
+    setTipoProveedor(pTipoProveedor);
+  }
+
+  
+  public Proveedor(int pCedula, String pIdentificador, String pNombre, String pCorreoElectronico,
+     String pNombreUsuario, String pProvincia, String pCanton, String pDistrito, String pSenias, 
+     int pTelefono, String pSitioWeb, String pHorarioAtencion, String pUbicacion, 
+     String pRedesSociales, int pCalificacion, String pTipoProveedor) {
+    setCedula(pCedula);
+    setIdentificador(pIdentificador);
+    setNombre(pNombre);
+    setCorreoElectronico(pCorreoElectronico);
+    setNombreUsuario(pNombreUsuario);
+    setProvincia(pProvincia);
+    setCanton(pCanton);
+    setDistrito(pDistrito);
+    setSenias(pSenias);
+    setTelefono(pTelefono);
+    setSitioWeb(pSitioWeb);
+    setHorarioAtencion(pHorarioAtencion);
+    setUbicacion(pUbicacion);
+    setRedesSociales(pRedesSociales);
+    setCalificacion(10);
+    setTipoProveedor(pTipoProveedor);
+  }
+  
+  
+  public Proveedor(int pCedula, String pIdentificador, String pNombre, int pTelefono, String 
+     pSitioWeb, String pRedesSociales){
+    setCedula(pCedula);
+    setIdentificador(pIdentificador);
+    setNombre(pNombre);
+    setTelefono(pTelefono);
+    setSitioWeb(pSitioWeb);
+    setRedesSociales(pRedesSociales);
+    
+  }
+  
+  
+  public String getNombre() {
+    return nombre;
+  }
+
+  
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
+  }
+  
+
+  public String getContrasenia() {
+    return contrasenia;
+  }
+
+  
+  public void setContrasenia(String contrasenia) {
+    this.contrasenia = contrasenia;
+  }
+
+  
+  public String getCorreoElectronico() {
+    return correoElectronico;
+  }
+
+  
+  public void setCorreoElectronico(String correoElectronico) {
+    this.correoElectronico = correoElectronico;
+  }
+
+  
+  public String getNombreUsuario() {
+    return nombreUsuario;
+  }
+
+  
+  public void setNombreUsuario(String nombreUsuario) {
+    this.nombreUsuario = nombreUsuario;
   }
 
   
@@ -143,5 +228,25 @@ public class Proveedor extends Usuario {
 
   public void setCalificacion(int calificacion) {
     this.calificacion = calificacion;
+  }
+
+  
+  public int getCedula() {
+    return cedula;
+  }
+
+  
+  public void setCedula(int cedula) {
+    this.cedula = cedula;
+  }
+
+  
+  public String getTipoProveedor() {
+    return tipoProveedor;
+  }
+
+  
+  public void setTipoProveedor(String tipoProveedor) {
+    this.tipoProveedor = tipoProveedor;
   }
 }

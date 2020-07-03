@@ -3,20 +3,28 @@ package modelo;
 /**
  * @author catas
  */
+
 public class Categoria {
   private int codigo = 0;
-  private String nombreCateg = "";
+  private String nombre = "";
   private String descripcion = "";
   private String estado = "";
 
   
-  public Categoria(int pCodigo, String pNombreCateg, String pDescripcion, String pEstado) {
+  public Categoria(int pCodigo, String pNombre, String pDescripcion, String pEstado) {
     setCodigo(pCodigo);
-    setNombreCateg(pNombreCateg);
+    setNombre(pNombre);
     setDescripcion(pDescripcion);
     setEstado(pEstado);
   }
- 
+  
+  
+  public Categoria(String pNombre, String pDescripcion, String pEstado) {
+    setNombre(pNombre);
+    setDescripcion(pDescripcion);
+    setEstado(pEstado);
+  }
+
   
   public int getCodigo() {
     return codigo;
@@ -28,13 +36,13 @@ public class Categoria {
   }
 
   
-  public String getNombreCateg() {
-    return nombreCateg;
+  public String getNombre() {
+    return nombre;
   }
   
 
-  public void setNombreCateg(String nombreCateg) {
-    this.nombreCateg = nombreCateg;
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
   }
   
 

@@ -8,14 +8,19 @@ public class Servicio {
   private String identificador = "";
   private String nombre = "";
   private String descripcion = "";
-  private String tipo = "";
-  private Categoria categoria = null;
+  private int categoria = 0;
   private double costo = 0;
-  private double costoEntrega = 0;
+  private int proveedor = 0;
   private byte[] fotografia;
 
-  public Servicio(String pIdendificador, String pNombre, String pDescripcion, String pTipo,
-     Categoria pCategoria, double pCosto, double pCostoEntrega, byte[] pFotografia) {
+  public Servicio(String pIdentificador, String pNombre, String pDescripcion, int pCategoria, 
+     double pCosto, int pProveedor) {
+    setIdentificador(pIdentificador);
+    setNombre(pNombre);
+    setDescripcion(pDescripcion);
+    setCategoria(pCategoria);
+    setCosto(pCosto);
+    setProveedor(pProveedor);
   }
 
 
@@ -47,24 +52,14 @@ public class Servicio {
   public void setDescripcion(String descripcion) {
     this.descripcion = descripcion;
   }
-  
-
-  public String getTipo() {
-    return tipo;
-  }
 
   
-  public void setTipo(String tipo) {
-    this.tipo = tipo;
-  }
-
-  
-  public Categoria getCategoria() {
+  public int getCategoria() {
     return categoria;
   }
 
   
-  public void setCategoria(Categoria categoria) {
+  public void setCategoria(int categoria) {
     this.categoria = categoria;
   }
 
@@ -79,16 +74,6 @@ public class Servicio {
   }
 
   
-  public double getCostoEntrega() {
-    return costoEntrega;
-  }
-  
-
-  public void setCostoEntrega(double costoEntrega) {
-    this.costoEntrega = costoEntrega;
-  }
-
-  
   public byte[] getFotografia() {
     return fotografia;
   }
@@ -97,5 +82,14 @@ public class Servicio {
   public void setFotografia(byte[] fotografia) {
     this.fotografia = fotografia;
   }
+
   
+  public int getProveedor() {
+    return proveedor;
+  }
+
+  
+  public void setProveedor(int proveedor) {
+    this.proveedor = proveedor;
+  }
 }

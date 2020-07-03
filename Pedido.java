@@ -10,25 +10,24 @@ import java.util.Calendar;
 
 public class Pedido {
   private int identificador = 0;
-  private Proveedor proveedor = null;
   private String estado = "En proceso";
   private Date fecha = null;
   private String fechaEntrega = "";
-  private Categoria categoria = null;
-  private Cliente duenio = null;
   private double montoTotal = 0;
+  private int duenio = 0;
+  private int proveedor = 0;
+  private String distancia = "";
   private ArrayList<Producto> productos = null;
   private ArrayList<Servicio> servicio = null;
 
   
-  public Pedido(int pIdentificador, Proveedor pProveedor, String pFechaEntrega, 
-     Categoria pCategoria, Cliente pDuenio, int pMontoTotal) {
+  public Pedido(int pIdentificador, int pProveedor, String pFechaEntrega, 
+     int pDuenio, int pMontoTotal) {
     setIdentificador(pIdentificador);
     setProveedor(pProveedor);
     setEstado("En proceso");
     setFecha();
-    setFechaEntrega("averiguar google maps");
-    setCategoria(pCategoria);
+    setFechaEntrega(pFechaEntrega);
     setDuenio(pDuenio);
     setMontoTotal(pMontoTotal);
   }
@@ -44,12 +43,12 @@ public class Pedido {
   }
 
   
-  public Proveedor getProveedor() {
+  public int getProveedor() {
     return proveedor;
   }
 
   
-  public void setProveedor(Proveedor proveedor) {
+  public void setProveedor(int proveedor) {
     this.proveedor = proveedor;
   }
   
@@ -87,22 +86,12 @@ public class Pedido {
   }
 
   
-  public Categoria getCategoria() {
-    return categoria;
-  }
-
-  
-  public void setCategoria(Categoria categoria) {
-    this.categoria = categoria;
-  }
-
-  
-  public Cliente getDuenio() {
+  public int getDuenio() {
     return duenio;
   }
 
   
-  public void setDuenio(Cliente duenio) {
+  public void setDuenio(int duenio) {
     this.duenio = duenio;
   }
 
@@ -134,5 +123,15 @@ public class Pedido {
   
   public void setServicio(ArrayList<Servicio> servicio) {
     this.servicio = servicio;
+  }
+
+  
+  public String getDistancia() {
+    return distancia;
+  }
+
+  
+  public void setDistancia(String distancia) {
+    this.distancia = distancia;
   }
 }

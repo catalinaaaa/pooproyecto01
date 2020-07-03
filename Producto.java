@@ -5,40 +5,40 @@ package modelo;
  */
 
 public class Producto {
-  private String identificador = "";
+  private String idProducto = "";
   private String nombre = "";
   private String descripcion = "";
-  private String tipo = "";
-  private Categoria categoria = null;
+  private int categoria = 0;
   private int cantidad = 0;
   private double costoUnitario = 0;
   private double costoEntrega = 0;
-  private byte[] fotografia;
   private String estado = "";
-
+  private int vendedor = 0;
+  private byte[] fotografia;
   
-  public Producto(String pIdentificador, String pNombre, String pDescripcion, String pTipo, 
-     Categoria pCategoria, int pCantidad, double pCostoUnitario, double pCostoEntrega, 
-     String pEstado) {
-    setIdentificador(pIdentificador);
+  public Producto(String pIdProducto, String pNombre, String pDescripcion, int pCategoria, 
+     int pCantidad, double pCostoUnitario, double pCostoEntrega, String pEstado, 
+     int pProveedor, byte[] pFoto) {
+    setIdProducto(pIdProducto);
     setNombre(pNombre);
     setDescripcion(pDescripcion);
-    setTipo(pTipo);
     setCategoria(pCategoria);
     setCantidad(pCantidad);
     setCostoUnitario(pCostoUnitario);
     setCostoEntrega(pCostoEntrega); //averiguar, google maps 
     setEstado(pEstado);
+    setVendedor(pProveedor);
+    setFotografia(pFoto);
   }
 
   
-  public String getIdentificador() {
-    return identificador;
+  public String getIdProducto() {
+    return idProducto;
   }
 
   
-  public void setIdentificador(String identificador) {
-    this.identificador = identificador;
+  public void setIdProducto(String idProducto) {
+    this.idProducto = idProducto;
   }
 
   
@@ -62,22 +62,12 @@ public class Producto {
   }
 
   
-  public String getTipo() {
-    return tipo;
-  }
-  
-
-  public void setTipo(String tipo) {
-    this.tipo = tipo;
-  }
-
-  
-  public Categoria getCategoria() {
+  public int getCategoria() {
     return categoria;
   }
 
   
-  public void setCategoria(Categoria categoria) {
+  public void setCategoria(int categoria) {
     this.categoria = categoria;
   }
 
@@ -129,5 +119,15 @@ public class Producto {
   
   public void setEstado(String estado) {
     this.estado = estado;
+  }
+
+  
+  public int getVendedor() {
+    return vendedor;
+  }
+
+  
+  public void setVendedor(int vendedor) {
+    this.vendedor = vendedor;
   }
 }
